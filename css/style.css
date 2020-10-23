@@ -84,10 +84,6 @@ body {
   padding: 50px;
 }
 
-.block {
-  margin: 0px 0px 0px 0px;
-}
-
 .block__item {
   padding-bottom: 10px;
 }
@@ -108,6 +104,9 @@ body {
   background: #000;
   position: absolute;
   top: 15px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .block__title::before {
@@ -124,8 +123,24 @@ body {
   left: 15px;
 }
 
+.block__title.active::before, .block__title.active::after {
+  background-color: red;
+}
+
+.block__title.active::before {
+  -webkit-transform: rotate(-40deg);
+      -ms-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+}
+
+.block__title.active::after {
+  -webkit-transform: rotate(40deg);
+      -ms-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
 .block__text {
+  display: none;
   font-size: 30px;
   padding: 10px 0 0 0;
-  background: #365fac;
 }
